@@ -2,6 +2,7 @@ from gtts.lang import tts_langs
 from gtts import gTTS
 import streamlit as st
 from googletrans import Translator
+import logging
 
 # Translator
 translator = Translator()
@@ -45,4 +46,5 @@ if btn:
         # Download Button
         st.download_button(label="Download", data=open("output.mp3","rb").read(), file_name="VocalizeNow.mp3")
     except:
-        st.error("Please Enter Something...")
+         logging.error(f"Error occurred: {e}")
+         st.error("Please Enter Something...")
