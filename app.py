@@ -45,6 +45,6 @@ if btn:
         st.audio("output.mp3",autoplay=True)
         # Download Button
         st.download_button(label="Download", data=open("output.mp3","rb").read(), file_name="VocalizeNow.mp3")
-    except:
+    except Exception as e:
          logging.error(f"Error occurred: {e}")
          st.error("Please Enter Something...")
